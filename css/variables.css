@@ -1,0 +1,89 @@
+:root {
+    /* Primary Colors */
+    --primary-color: #3498db;
+    --primary-dark: #2980b9;
+    --primary-light: #5dade2;
+    --primary-bright: #38b6ff;
+    
+    /* Secondary Colors */
+    --secondary-color: #2ecc71;
+    --secondary-dark: #27ae60;
+    --secondary-light: #58d68d;
+    
+    /* Accent Colors */
+    --accent-color: #9b59b6;
+    --accent-dark: #8e44ad;
+    --accent-light: #bb8fce;
+    
+    /* Neutral Colors */
+    --dark-color: #2c3e50;
+    --light-color: #ecf0f1;
+    --gray-color: #95a5a6;
+    --light-gray: #f5f6fa;
+    --dark-gray: #34495e;
+    
+    /* Text Colors */
+    --text-dark: #2c3e50;
+    --text-light: #ffffff;
+    --text-muted: #7f8c8d;
+    
+    /* Status Colors */
+    --success-color: #2ecc71;
+    --warning-color: #f39c12;
+    --error-color: #e74c3c;
+    --info-color: #3498db;
+    
+    /* Component Specific Colors */
+    --header-bg: #101624;
+    --footer-bg: #0d111c;
+    --card-bg: #ffffff;
+    --section-bg: #f5f6fa;
+    
+    /* Dark Theme Colors */
+    --dark-bg: #141c2e;
+    --dark-card-bg: #1e2a45;
+    --dark-tab-bg: #121826;
+    --dark-accent: #2c3e60;
+    --dark-section-alt: #1a2337;
+    --dark-feature-icon-bg: #2a3b5a;
+    --dark-card-border: rgba(255, 255, 255, 0.1);
+    
+    /* Border Colors */
+    --border-color: #e0e0e0;
+    --border-radius: 8px;
+    --border-radius-lg: 15px;
+    --border-radius-sm: 4px;
+    
+    /* Shadow Variables */
+    --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --box-shadow-hover: 0 8px 20px rgba(0, 0, 0, 0.15);
+    --box-shadow-card: 0 3px 10px rgba(0, 0, 0, 0.08);
+    --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    
+    /* Typography */
+    --font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+    --font-size-base: 16px;
+    --font-size-sm: 14px;
+    --font-size-lg: 18px;
+    --font-size-xl: 24px;
+    --font-size-xxl: 32px;
+    --font-size-xxxl: 48px;
+    --line-height: 1.5;
+    
+    /* Spacing */
+    --spacing-xs: 5px;
+    --spacing-sm: 10px;
+    --spacing-md: 15px;
+    --spacing-lg: 20px;
+    --spacing-xl: 30px;
+    --spacing-xxl: 50px;
+    
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+    
+    /* Container Width */
+    --container-width: 1170px;
+    --container-padding: 15px;
+} 
