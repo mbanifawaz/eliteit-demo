@@ -138,14 +138,38 @@ document.addEventListener('DOMContentLoaded', function() {
         tabButtons.forEach(btn => btn.classList.remove('active'));
         tabButtons[index].classList.add('active');
         
-        // Hide all tab panes first
+        // Hide all tabs
         tabPanes.forEach(pane => {
-            pane.classList.remove('active');
+            pane.classList.remove('active', 'fade-in');
+            
+            // Reset animation classes on tab pane content
+            const img = pane.querySelector('.service-img');
+            const info = pane.querySelector('.service-info');
+            
+            if (img) {
+                img.classList.remove('visible', 'is-revealed');
+            }
+            if (info) {
+                info.classList.remove('visible', 'is-revealed');
+            }
         });
         
-        // Show the selected tab pane with animation
+        // Show active tab
         const activePane = document.getElementById(serviceId);
         activePane.classList.add('active');
+        
+        // Animate content inside the active tab
+        setTimeout(() => {
+            const img = activePane.querySelector('.service-img');
+            const info = activePane.querySelector('.service-info');
+            
+            if (img) {
+                img.classList.add('visible', 'is-revealed');
+            }
+            if (info) {
+                info.classList.add('visible', 'is-revealed');
+            }
+        }, 50);
     }
     
     // Start tab carousel

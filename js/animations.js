@@ -2,21 +2,21 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     
-    // Intersection Observer for scroll animations
-    const animatedElements = document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right');
+    // Enhanced Intersection Observer for scroll animations
+    const scrollAnimElements = document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right, .slide-from-left, .slide-from-right, .fade-in');
     
-    // Create observer for animation elements
+    // Create observer for animation elements with improved options
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 // Add visible class when element is in viewport
                 entry.target.classList.add('visible');
                 
-                // If we only want to play the animation once, unobserve after triggering
+                // If we only want to play the animation once, uncomment below
                 // observer.unobserve(entry.target);
             } else {
                 // Optional: Remove the class when element is out of viewport
-                // Uncomment this if you want animations to replay each time
+                // Uncomment this if you want animations to replay when scrolling back up
                 // entry.target.classList.remove('visible');
             }
         });
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Observe all animated elements
-    animatedElements.forEach(element => {
+    scrollAnimElements.forEach(element => {
         observer.observe(element);
         
         // Check if element has a delay attribute
@@ -35,6 +35,9 @@ document.addEventListener('DOMContentLoaded', function() {
             element.style.transitionDelay = `${delay}ms`;
         }
     });
+    
+    // Apply scroll animations to specific page sections
+    applyScrollAnimations();
     
     // Animate text elements
     const textElements = document.querySelectorAll('.hero-content h1, .hero-content p');
@@ -168,5 +171,97 @@ document.addEventListener('DOMContentLoaded', function() {
                 cursorDot.classList.remove('dot-hover');
             });
         });
+    }
+    
+    // Function to apply scroll animations to specific page sections
+    function applyScrollAnimations() {
+        // Why choose us section - alternate left/right animations
+        const whyUsSection = document.querySelector('#why-us');
+        if (whyUsSection) {
+            const featureCards = whyUsSection.querySelectorAll('.feature-card');
+            featureCards.forEach((card, index) => {
+                // Remove existing animation classes
+                card.classList.remove('fade-in-up');
+                
+                // Add alternating left/right animations
+                if (index % 2 === 0) {
+                    card.classList.add('slide-from-left');
+                } else {
+                    card.classList.add('slide-from-right');
+                }
+                
+                // Set custom delay
+                card.dataset.delay = (index * 150).toString();
+            });
+        }
+        
+        // Services section - fly in animations
+        const servicesSection = document.querySelector('#services');
+        if (servicesSection) {
+            const tabButtons = servicesSection.querySelectorAll('.tab-btn');
+            tabButtons.forEach((btn, index) => {
+                btn.classList.add('slide-from-left');
+                btn.dataset.delay = (index * 100).toString();
+            });
+            
+            const tabPanes = servicesSection.querySelectorAll('.tab-pane');
+            tabPanes.forEach(pane => {
+                const img = pane.querySelector('.service-img');
+                const info = pane.querySelector('.service-info');
+                
+                if (img) img.classList.add('slide-from-left');
+                if (info) info.classList.add('slide-from-right');
+            });
+        }
+        
+        // About section
+        const aboutSection = document.querySelector('#about');
+        if (aboutSection) {
+            const aboutImage = aboutSection.querySelector('.about-image');
+            const aboutText = aboutSection.querySelector('.about-text');
+            
+            if (aboutImage) aboutImage.classList.add('slide-from-left');
+            if (aboutText) aboutText.classList.add('slide-from-right');
+            
+            const missionVision = aboutSection.querySelectorAll('.mission, .vision');
+            missionVision.forEach((el, index) => {
+                el.classList.add('slide-from-bottom');
+                el.dataset.delay = (index * 200).toString();
+            });
+        }
+        
+        // Contact section
+        const contactSection = document.querySelector('#contact');
+        if (contactSection) {
+            const contactInfo = contactSection.querySelector('.contact-info');
+            const contactForm = contactSection.querySelector('.contact-form');
+            
+            if (contactInfo) contactInfo.classList.add('slide-from-left');
+            if (contactForm) {
+                contactForm.classList.add('slide-from-right');
+                // Ensure contact form has the right classes for visibility
+                contactForm.style.visibility = 'visible';
+                contactForm.style.opacity = '0';
+            }
+            
+            const infoItems = contactSection.querySelectorAll('.info-item');
+            infoItems.forEach((item, index) => {
+                item.classList.add('slide-from-left');
+                item.dataset.delay = (index * 150).toString();
+            });
+        }
+        
+        // Hero section - Already has animations, enhance them
+        const heroSection = document.querySelector('#home');
+        if (heroSection) {
+            const heroContent = heroSection.querySelector('.hero-content');
+            const heroImage = heroSection.querySelector('.hero-image');
+            
+            if (heroContent) heroContent.classList.add('fade-in');
+            if (heroImage) {
+                heroImage.classList.remove('slide-in-right');
+                heroImage.classList.add('slide-from-right');
+            }
+        }
     }
 }); 

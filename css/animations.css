@@ -179,6 +179,55 @@
     transform: translateX(0);
 }
 
+/* New Enhanced Scroll Animations */
+.slide-from-left {
+    opacity: 0;
+    transform: translateX(-80px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    will-change: transform, opacity;
+}
+
+.slide-from-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.slide-from-right {
+    opacity: 0;
+    transform: translateX(80px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    will-change: transform, opacity;
+}
+
+.slide-from-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.slide-from-bottom {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    will-change: transform, opacity;
+}
+
+.slide-from-bottom.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Section Animation */
+.section-animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.section-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* Hover Effects */
 .hover-scale {
     transition: transform var(--transition-normal);
@@ -255,13 +304,8 @@
 
 /* Background Animation */
 .bg-animate {
-    background: linear-gradient(-45deg, 
-        var(--primary-color), 
-        var(--primary-dark), 
-        var(--secondary-color), 
-        var(--accent-color));
-    background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
+    background-size: 300% 300%;
+    animation: gradientBG 8s ease infinite;
 }
 
 @keyframes gradientBG {
@@ -276,12 +320,12 @@
     }
 }
 
-/* Text Animation */
+/* Text animation transition */
 .text-animate {
-    display: inline-block;
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    display: inline-block;
 }
 
 .text-animate.visible {
@@ -289,14 +333,14 @@
     transform: translateY(0);
 }
 
-/* Button Hover Animation */
+/* Button animation */
 .btn-animate {
     position: relative;
     overflow: hidden;
 }
 
 .btn-animate:after {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: -100%;
@@ -304,38 +348,75 @@
     height: 100%;
     background: linear-gradient(
         90deg,
-        transparent,
-        rgba(255, 255, 255, 0.2),
-        transparent
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.2) 50%,
+        rgba(255, 255, 255, 0) 100%
     );
-    transition: left 0.7s ease;
+    transition: all 0.8s ease;
 }
 
 .btn-animate:hover:after {
     left: 100%;
 }
 
-/* Service Card Hover Effect */
+/* Social icons hover animation */
+.social-icon:hover i {
+    animation: bounce 0.8s ease;
+}
+
+/* Tab container layout fixes */
+.tab-content {
+    position: relative;
+    overflow: hidden;
+    min-height: 300px; /* Ensure consistent height */
+}
+
+/* Tab content animation */
 .tab-pane {
-    transition: opacity var(--transition-normal), transform var(--transition-normal);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    visibility: hidden; /* Start hidden */
+    display: none; /* Hide all tabs by default */
+    position: absolute; /* All tabs are absolutely positioned */
+    width: 100%; /* Ensure it takes full width */
+    justify-content: space-between; /* Layout for service images and content */
+    align-items: center;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    opacity: 0;
+}
+
+.tab-pane.active {
+    display: flex; /* Show active tab */
+    opacity: 1;
+    transform: translateY(0);
+    z-index: 5; /* Higher z-index for active tab */
+    position: relative; /* Active tab is positioned normally */
+    visibility: visible !important;
 }
 
 .tab-pane.fade-out {
     opacity: 0;
-    transform: translateX(-20px);
+    transform: translateY(10px);
+    position: absolute;
+    visibility: hidden !important;
+    z-index: 1;
 }
 
 .tab-pane.fade-in {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
 }
 
-/* Social Icon Animation */
-.social-icon:hover i {
-    animation: bounce 0.5s ease;
+/* Tab content specific animations - ensure always visible when active */
+.tab-pane.active .service-img,
+.tab-pane.active .service-info {
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: translateX(0) !important;
 }
 
-/* Underline Animation for links */
+/* Underline animation */
 .animate-underline {
     position: relative;
 }
@@ -343,14 +424,139 @@
 .animate-underline:after {
     content: '';
     position: absolute;
+    bottom: -3px;
+    left: 0;
     width: 0;
     height: 2px;
-    bottom: -5px;
-    left: 0;
     background-color: var(--primary-color);
-    transition: width var(--transition-normal);
+    transition: width 0.3s ease;
 }
 
 .animate-underline:hover:after {
     width: 100%;
+}
+
+/* ScrollReveal Animations */
+[data-sr-origin] {
+    visibility: hidden;
+}
+
+.is-revealed {
+    visibility: visible !important;
+}
+
+/* Enhanced 3D transitions */
+[data-sr-origin="left"] {
+    transform-origin: left center;
+}
+
+[data-sr-origin="right"] {
+    transform-origin: right center;
+}
+
+[data-sr-origin="top"] {
+    transform-origin: center top;
+}
+
+[data-sr-origin="bottom"] {
+    transform-origin: center bottom;
+}
+
+/* Override will-change for better performance */
+[data-sr-origin] {
+    will-change: transform, opacity;
+}
+
+/* Custom transitions for specific sections */
+#home .hero-content.is-revealed h1,
+#home .hero-content.is-revealed p,
+#home .hero-content.is-revealed .btn {
+    animation: fadeInStagger 0.8s ease forwards;
+}
+
+#home .hero-content.is-revealed h1 {
+    animation-delay: 0.2s;
+}
+
+#home .hero-content.is-revealed p {
+    animation-delay: 0.4s;
+}
+
+#home .hero-content.is-revealed .btn {
+    animation-delay: 0.6s;
+}
+
+@keyframes fadeInStagger {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Ensure content isn't shifted during animations */
+.services,
+.about,
+.contact,
+.why-us {
+    overflow-x: hidden;
+}
+
+/* Contact form specific animations */
+.contact-form {
+    visibility: visible !important;
+    will-change: transform, opacity;
+}
+
+.contact-form.slide-from-right {
+    opacity: 0;
+    transform: translateX(80px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.contact-form.slide-from-right.visible,
+.contact-form.is-revealed {
+    opacity: 1 !important;
+    transform: translateX(0) !important;
+    visibility: visible !important;
+}
+
+/* Fixed styles for service tabs */
+.services .tab-content {
+    position: relative;
+    min-height: 300px;
+    overflow: hidden;
+}
+
+.services .tab-pane {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between;
+    align-items: center;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    transform: translateY(20px);
+    z-index: 1;
+}
+
+.services .tab-pane.active {
+    opacity: 1;
+    visibility: visible;
+    position: relative;
+    transform: translateY(0);
+    z-index: 2;
+}
+
+/* Contact form specific animations */
+.contact-form {
+    visibility: visible !important;
+    will-change: transform, opacity;
 } 

@@ -59,12 +59,12 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container">
-            <div class="hero-content fade-in">
+            <div class="hero-content" data-sr-origin="left" data-sr-distance="100px">
                 <h1>Empowering Businesses Through Smart Technology</h1>
                 <p>Elite for IT Solutions delivers innovative ERP, software, and digital services tailored to your business goals.</p>
                 <a href="#contact" class="btn btn-primary">Request a Free Consultation</a>
             </div>
-            <div class="hero-image slide-in-right">
+            <div class="hero-image" data-sr-origin="right" data-sr-distance="100px">
                 <img src="img/hero-image.jpg" alt="IT Solutions">
             </div>
         </div>
@@ -74,33 +74,33 @@
     <!-- Why Choose Us Section -->
     <section id="why-us" class="why-us">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-sr-origin="bottom">
                 <h2>Why Choose Us</h2>
                 <div class="underline"></div>
             </div>
             <div class="features-grid">
-                <div class="feature-card fade-in-up">
+                <div class="feature-card" data-sr-origin="left">
                     <div class="feature-icon">
                         <i class="fas fa-cogs"></i>
                     </div>
                     <h3>Customized Solutions</h3>
                     <p>Tailored IT solutions for businesses of all sizes</p>
                 </div>
-                <div class="feature-card fade-in-up" data-delay="200">
+                <div class="feature-card" data-sr-origin="bottom" data-sr-delay="150">
                     <div class="feature-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
                     <h3>ERP Expertise</h3>
                     <p>Deep understanding of operational efficiency</p>
                 </div>
-                <div class="feature-card fade-in-up" data-delay="400">
+                <div class="feature-card" data-sr-origin="right" data-sr-delay="300">
                     <div class="feature-icon">
                         <i class="fas fa-project-diagram"></i>
                     </div>
                     <h3>End-to-End Service</h3>
                     <p>Complete development, implementation, and support</p>
                 </div>
-                <div class="feature-card fade-in-up" data-delay="600">
+                <div class="feature-card" data-sr-origin="bottom" data-sr-delay="450">
                     <div class="feature-icon">
                         <i class="fas fa-rocket"></i>
                     </div>
@@ -111,16 +111,47 @@
         </div>
     </section>
 
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image" data-sr-origin="left" data-sr-distance="80px">
+                    <img src="img/about-image.jpg" alt="About Elite IT">
+                </div>
+                <div class="about-text" data-sr-origin="right" data-sr-distance="80px">
+                    <div class="section-header left-aligned">
+                        <h2>About Us</h2>
+                        <div class="underline"></div>
+                    </div>
+                    <p>Elite for IT Solutions is a Saudi-based technology startup providing innovative and scalable IT solutions. Whether you're starting small or planning for growth, we help you modernize, digitize, and thrive.</p>
+                    
+                    <div class="mission-vision">
+                        <div class="mission" data-sr-origin="bottom" data-sr-delay="200">
+                            <h3><i class="fas fa-bullseye"></i> Our Mission</h3>
+                            <p>Empower organizations with reliable, innovative, and customized IT solutions for digital transformation.</p>
+                        </div>
+                        <div class="vision" data-sr-origin="bottom" data-sr-delay="350">
+                            <h3><i class="fas fa-eye"></i> Our Vision</h3>
+                            <p>Become a trusted name in the Gulf region for smart, future-ready technology solutions that help businesses thrive.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
     <!-- Services Section -->
     <section id="services" class="services">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-sr-origin="bottom">
                 <h2>Our Core Services</h2>
                 <div class="underline"></div>
             </div>
             <div class="services-container">
                 <div class="service-tab">
-                    <div class="tab-buttons">
+                    <div class="tab-buttons" data-sr-origin="left">
                         <button class="tab-btn active" data-service="erp">ERP Implementation</button>
                         <button class="tab-btn" data-service="web">Website Development</button>
                         <button class="tab-btn" data-service="mobile">Mobile App Development</button>
@@ -129,10 +160,10 @@
                     </div>
                     <div class="tab-content">
                         <div class="tab-pane active" id="erp">
-                            <div class="service-img">
+                            <div class="service-img" data-sr-origin="left">
                                 <img src="img/erp-service.jpg" alt="ERP Implementation">
                             </div>
-                            <div class="service-info">
+                            <div class="service-info" data-sr-origin="right">
                                 <h3>ERP Implementation & Support</h3>
                                 <ul>
                                     <li><i class="fas fa-check-circle"></i> Needs analysis & system selection</li>
@@ -144,10 +175,10 @@
                             </div>
                         </div>
                         <div class="tab-pane" id="web">
-                            <div class="service-img">
+                            <div class="service-img" data-sr-origin="left">
                                 <img src="img/web-service.jpg" alt="Website Development">
                             </div>
-                            <div class="service-info">
+                            <div class="service-info" data-sr-origin="right">
                                 <h3>Website & Web App Development</h3>
                                 <ul>
                                     <li><i class="fas fa-check-circle"></i> Company websites</li>
@@ -158,10 +189,10 @@
                             </div>
                         </div>
                         <div class="tab-pane" id="mobile">
-                            <div class="service-img">
+                            <div class="service-img" data-sr-origin="left">
                                 <img src="img/mobile-service.jpg" alt="Mobile App Development">
                             </div>
-                            <div class="service-info">
+                            <div class="service-info" data-sr-origin="right">
                                 <h3>Mobile App Development</h3>
                                 <ul>
                                     <li><i class="fas fa-check-circle"></i> Native & cross-platform apps</li>
@@ -172,20 +203,20 @@
                             </div>
                         </div>
                         <div class="tab-pane" id="custom">
-                            <div class="service-img">
+                            <div class="service-img" data-sr-origin="left">
                                 <img src="img/custom-service.jpg" alt="Custom System Development">
                             </div>
-                            <div class="service-info">
+                            <div class="service-info" data-sr-origin="right">
                                 <h3>Custom System Development</h3>
                                 <p>We create tailored systems designed around your specific needs, ensuring performance, scalability, and usability.</p>
                                 <a href="services/custom-systems.html" class="btn btn-secondary">Learn More</a>
                             </div>
                         </div>
                         <div class="tab-pane" id="consulting">
-                            <div class="service-img">
+                            <div class="service-img" data-sr-origin="left">
                                 <img src="img/consulting-service.jpg" alt="IT Consulting">
                             </div>
-                            <div class="service-info">
+                            <div class="service-info" data-sr-origin="right">
                                 <h3>IT Consulting & Support</h3>
                                 <p>Technology evolves - we make sure you're always ready. Get ongoing IT consulting and support when you need it most.</p>
                                 <a href="services/it-consulting.html" class="btn btn-secondary">Learn More</a>
@@ -197,57 +228,27 @@
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="about-content">
-                <!-- <div class="about-image parallax-effect"> -->
-                    <div class="about-image">
-                    <img src="img/about-image.jpg" alt="About Elite IT">
-                </div>
-                <div class="about-text">
-                    <div class="section-header left-aligned">
-                        <h2>About Us</h2>
-                        <div class="underline"></div>
-                    </div>
-                    <p>Elite for IT Solutions is a Saudi-based technology startup providing innovative and scalable IT solutions. Whether you're starting small or planning for growth, we help you modernize, digitize, and thrive.</p>
-                    
-                    <div class="mission-vision">
-                        <div class="mission">
-                            <h3><i class="fas fa-bullseye"></i> Our Mission</h3>
-                            <p>Empower organizations with reliable, innovative, and customized IT solutions for digital transformation.</p>
-                        </div>
-                        <div class="vision">
-                            <h3><i class="fas fa-eye"></i> Our Vision</h3>
-                            <p>Become a trusted name in the Gulf region for smart, future-ready technology solutions that help businesses thrive.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-sr-origin="bottom">
                 <h2>Contact Us</h2>
                 <div class="underline"></div>
                 <p>Let's Build Your Solution Together</p>
             </div>
             <div class="contact-container">
-                <div class="contact-info">
+                <div class="contact-info" data-sr-origin="left">
                     <h3>Get in Touch</h3>
                     <p>Whether you're launching a startup or scaling your enterprise, we're ready to help you take the next step.</p>
-                    <div class="info-item">
+                    <div class="info-item" data-sr-origin="left" data-sr-delay="150">
                         <i class="fas fa-map-marker-alt"></i>
                         <p>Based in Saudi Arabia</p>
                     </div>
-                    <div class="info-item">
+                    <div class="info-item" data-sr-origin="left" data-sr-delay="300">
                         <i class="fas fa-envelope"></i>
                         <p>info@eliteitsolutions.com</p>
                     </div>
-                    <div class="info-item">
+                    <div class="info-item" data-sr-origin="left" data-sr-delay="450">
                         <i class="fas fa-phone-alt"></i>
                         <p>+966-XXX-XXXX</p>
                     </div>
@@ -258,7 +259,7 @@
                         <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
-                <div class="contact-form">
+                <div class="contact-form" data-sr-origin="right" data-sr-distance="80px">
                     <form id="contactForm">
                         <div class="form-group">
                             <input type="text" id="name" name="name" placeholder="Your Name" required>
@@ -320,8 +321,54 @@
         <i class="fas fa-arrow-up"></i>
     </a>
 
-    <!-- JavaScript Files -->
+    <!-- Scripts -->
+    <script src="js/lib/scrollReveal.js"></script>
     <script src="js/animations.js"></script>
     <script src="js/script.js"></script>
+    <script>
+        // Initialize ScrollReveal with custom settings
+        document.addEventListener('DOMContentLoaded', function() {
+            // Create ScrollReveal instance with default configuration
+            const sr = new ScrollReveal({
+                distance: '60px',
+                duration: 1000,
+                easing: 'cubic-bezier(0.5, 0, 0, 1)',
+                origin: 'bottom',
+                scale: 1,
+                reset: false,
+                cleanup: true  // Stop observing after animation
+            });
+            
+            // Apply reveal to elements with data-sr attributes
+            sr.reveal('[data-sr-origin]');
+            
+            // Explicitly handle the contact form with specific settings
+            sr.reveal('.contact-form', {
+                distance: '80px',
+                origin: 'right',
+                duration: 1000,
+                delay: 200
+            });
+            
+            // Special sequence animations
+            sr.sequence({
+                selector: '#why-us .feature-card',
+                interval: 150,
+                origin: 'bottom'
+            });
+            
+            sr.sequence({
+                selector: '#services .tab-btn',
+                interval: 100,
+                origin: 'left'
+            });
+            
+            sr.sequence({
+                selector: '#contact .info-item',
+                interval: 150,
+                origin: 'left'
+            });
+        });
+    </script>
 </body>
 </html> 
