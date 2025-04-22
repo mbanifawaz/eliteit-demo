@@ -1,8 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="loading">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        // Add loading class to HTML element immediately
+        document.documentElement.classList.add('loading');
+        
+        // Failsafe method to force remove loading if it gets stuck
+        function forceRemoveLoading() {
+            document.documentElement.classList.remove('loading');
+            const overlays = document.querySelectorAll('.loading-overlay');
+            overlays.forEach(overlay => {
+                overlay.classList.remove('active');
+                setTimeout(() => {
+                    if (overlay && overlay.parentNode) {
+                        overlay.parentNode.removeChild(overlay);
+                    }
+                }, 300);
+            });
+        }
+        
+        // Remove loading class when page is fully loaded
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.documentElement.classList.remove('loading');
+                
+                // Failsafe: If loading is still visible after a second, force remove it
+                setTimeout(forceRemoveLoading, 1000);
+            }, 500);
+        });
+        
+        // Failsafe: Remove loading after 10 seconds no matter what
+        setTimeout(forceRemoveLoading, 10000);
+    </script>
     <script src="../js/loading.js"></script>
     <link rel="stylesheet" href="../css/loading.css">
     <title>Website & Web App Development - Elite for IT Solutions</title>

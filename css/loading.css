@@ -47,6 +47,20 @@
     }
 }
 
+/* Make sure the body content is hidden until loading is complete */
+html.loading {
+    overflow: hidden;
+}
+
+html.loading body {
+    visibility: hidden;
+}
+
+html.loading .loading-overlay {
+    visibility: visible;
+    opacity: 1;
+}
+
 /* Theme transition animation */
 body {
     transition: background-color 0.5s ease, color 0.5s ease;

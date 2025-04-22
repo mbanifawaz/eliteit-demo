@@ -1,8 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="loading">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        // Add loading class to HTML element immediately
+        document.documentElement.classList.add('loading');
+        
+        // Remove loading class when page is fully loaded
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.documentElement.classList.remove('loading');
+            }, 500); // Delay to match the loading.js timing
+        });
+    </script>
     <script src="../js/loading.js"></script>
     <link rel="stylesheet" href="../css/loading.css">
     <title>IT Consulting & Support - Elite for IT Solutions</title>
