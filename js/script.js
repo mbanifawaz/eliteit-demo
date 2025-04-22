@@ -323,7 +323,8 @@ document.addEventListener('DOMContentLoaded', function() {
         // Get available themes
         const themes = [
             { file: 'variables.css', name: 'Default' },
-            { file: 'red_variables.css', name: 'Red' }
+            { file: 'red_variables.css', name: 'Red' },
+            { file: 'saudi_variables.css', name: 'Saudi' }
         ];
         
         // Create theme options
@@ -337,8 +338,8 @@ document.addEventListener('DOMContentLoaded', function() {
             option.setAttribute('data-theme', theme.file);
             dropdownContent.appendChild(option);
             
-            option.addEventListener('click', () => {
-                setTheme(theme.file);
+            option.addEventListener('click', async () => {
+                await setTheme(theme.file);
                 themeDropdown.classList.remove('active');
             });
         });
@@ -356,36 +357,62 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Set initial theme
         const defaultTheme = localStorage.getItem('theme') || 'variables.css';
-        setTheme(defaultTheme);
+        setTheme(defaultTheme, false); // Don't show loading on initial load
         
-        function setTheme(themeFile) {
-            // Remove existing theme stylesheet if it exists
-            const existingTheme = document.getElementById('theme-variables');
-            if (existingTheme) {
-                existingTheme.remove();
+        async function setTheme(themeFile, showLoader = true) {
+            // Show loading screen if this is not the initial page load
+            if (showLoader && window.showLoading) {
+                await window.showLoading('Changing theme...');
             }
             
-            // Add new theme stylesheet
-            const themeLink = document.createElement('link');
-            themeLink.id = 'theme-variables';
-            themeLink.rel = 'stylesheet';
-            
-            // Check if we're in a service page or main page
-            const isServicePage = window.location.pathname.includes('/services/');
-            const basePath = isServicePage ? '../css/themes/' : 'css/themes/';
-            themeLink.href = basePath + themeFile;
-            
-            // Insert theme stylesheet before other stylesheets
-            const firstStylesheet = head.querySelector('link[rel="stylesheet"]');
-            head.insertBefore(themeLink, firstStylesheet);
-            
-            // Save theme preference
-            localStorage.setItem('theme', themeFile);
-            
-            // Update active state in dropdown
-            const options = dropdownContent.querySelectorAll('.theme-option');
-            options.forEach(option => {
-                option.classList.toggle('active', option.getAttribute('data-theme') === themeFile);
+            return new Promise((resolve) => {
+                // Remove existing theme stylesheet if it exists
+                const existingTheme = document.getElementById('theme-variables');
+                if (existingTheme) {
+                    existingTheme.remove();
+                }
+                
+                // Add new theme stylesheet
+                const themeLink = document.createElement('link');
+                themeLink.id = 'theme-variables';
+                themeLink.rel = 'stylesheet';
+                
+                // Check if we're in a service page or main page
+                const isServicePage = window.location.pathname.includes('/services/');
+                const basePath = isServicePage ? '../css/themes/' : 'css/themes/';
+                themeLink.href = basePath + themeFile;
+                
+                // Hide loading screen after theme has loaded
+                themeLink.onload = function() {
+                    // Give a small delay to allow browser to apply styles
+                    setTimeout(async () => {
+                        if (window.hideLoading) {
+                            await window.hideLoading();
+                        }
+                        resolve();
+                    }, 500);
+                };
+                
+                // Set a timeout in case the onload event doesn't fire
+                setTimeout(() => {
+                    if (window.hideLoading) {
+                        window.hideLoading();
+                    }
+                    resolve();
+                }, 3000);
+                
+                // Insert theme stylesheet before other stylesheets
+                const firstStylesheet = head.querySelector('link[rel="stylesheet"]');
+                head.insertBefore(themeLink, firstStylesheet);
+                
+                // Save theme preference
+                localStorage.setItem('theme', themeFile);
+                
+                // Update active state in dropdown
+                const options = dropdownContent.querySelectorAll('.theme-option');
+                options.forEach(option => {
+                    option.classList.toggle('active', option.getAttribute('data-theme') === themeFile);
+                });
             });
         }
     }

@@ -1,0 +1,69 @@
+/* Loading Screen CSS */
+
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.loading-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.spinner {
+    width: 70px;
+    height: 70px;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: var(--primary-color, #3498db);
+    animation: spin 1s ease-in-out infinite;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+.loading-text {
+    position: absolute;
+    bottom: calc(50% - 60px);
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Theme transition animation */
+body {
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Add transitions to all elements that might change with theme */
+header, 
+section, 
+footer, 
+.container, 
+.hero, 
+.feature-card, 
+.service-tab, 
+.tab-pane, 
+.about-content, 
+.contact-container, 
+.contact-info, 
+.contact-form {
+    transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease;
+} 
