@@ -3,6 +3,7 @@
 // Wait for the DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
     initializeMobileMenu();
+    initializeThemeSelector();
     
     // Preload all service images to prevent flickering
     preloadServiceImages();
@@ -311,4 +312,81 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+    
+    // Function to initialize theme selector
+    function initializeThemeSelector() {
+        const themeDropdown = document.querySelector('.theme-dropdown');
+        const themeBtn = themeDropdown.querySelector('.theme-btn');
+        const dropdownContent = themeDropdown.querySelector('.theme-dropdown-content');
+        const head = document.head;
+        
+        // Get available themes
+        const themes = [
+            { file: 'variables.css', name: 'Default' },
+            { file: 'red_variables.css', name: 'Red' }
+        ];
+        
+        // Create theme options
+        themes.forEach(theme => {
+            const option = document.createElement('div');
+            option.className = 'theme-option';
+            option.innerHTML = `
+                <i class="fas fa-check"></i>
+                <span>${theme.name}</span>
+            `;
+            option.setAttribute('data-theme', theme.file);
+            dropdownContent.appendChild(option);
+            
+            option.addEventListener('click', () => {
+                setTheme(theme.file);
+                themeDropdown.classList.remove('active');
+            });
+        });
+        
+        // Toggle dropdown
+        themeBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            themeDropdown.classList.toggle('active');
+        });
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', () => {
+            themeDropdown.classList.remove('active');
+        });
+        
+        // Set initial theme
+        const defaultTheme = localStorage.getItem('theme') || 'variables.css';
+        setTheme(defaultTheme);
+        
+        function setTheme(themeFile) {
+            // Remove existing theme stylesheet if it exists
+            const existingTheme = document.getElementById('theme-variables');
+            if (existingTheme) {
+                existingTheme.remove();
+            }
+            
+            // Add new theme stylesheet
+            const themeLink = document.createElement('link');
+            themeLink.id = 'theme-variables';
+            themeLink.rel = 'stylesheet';
+            
+            // Check if we're in a service page or main page
+            const isServicePage = window.location.pathname.includes('/services/');
+            const basePath = isServicePage ? '../css/themes/' : 'css/themes/';
+            themeLink.href = basePath + themeFile;
+            
+            // Insert theme stylesheet before other stylesheets
+            const firstStylesheet = head.querySelector('link[rel="stylesheet"]');
+            head.insertBefore(themeLink, firstStylesheet);
+            
+            // Save theme preference
+            localStorage.setItem('theme', themeFile);
+            
+            // Update active state in dropdown
+            const options = dropdownContent.querySelectorAll('.theme-option');
+            options.forEach(option => {
+                option.classList.toggle('active', option.getAttribute('data-theme') === themeFile);
+            });
+        }
+    }
 }); 
