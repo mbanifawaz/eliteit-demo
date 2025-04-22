@@ -1,20 +1,20 @@
 :root {
     /* Primary Colors */
-    --primary-color: #1e4d8c;
-    --primary-dark: #2980b9;
-    --primary-light: #4299e1;
-    --primary-bright: #3182ce;
-    --primary-bright-rgb: 49, 130, 206;  /* RGB values for primary-bright */
+    --primary-color: #c0392b;
+    --primary-dark: #a93226;
+    --primary-light: #e74c3c;
+    --primary-bright: #d64541;
+    --primary-bright-rgb: 214, 69, 65;  /* RGB values for primary-bright */
     
     /* Secondary Colors */
-    --secondary-color: #2d3748;
-    --secondary-dark: #1a202c;
-    --secondary-light: #58d68d;
+    --secondary-color: #2c3e50;
+    --secondary-dark: #1f2a44;
+    --secondary-light: #e67e22;
     
     /* Accent Colors */
-    --accent-color: #9b59b6;
-    --accent-dark: #8e44ad;
-    --accent-light: #bb8fce;
+    --accent-color: #8e44ad;
+    --accent-dark: #7d3c98;
+    --accent-light: #a569bd;
     
     /* Neutral Colors */
     --dark-color: #2c3e50;
@@ -30,25 +30,25 @@
     --text-muted: #7f8c8d;
     
     /* Status Colors */
-    --success-color: #2ecc71;
-    --warning-color: #f39c12;
-    --error-color: #e74c3c;
-    --info-color: #3498db;
+    --success-color: #27ae60;
+    --warning-color: #f1c40f;
+    --error-color: #c0392b;
+    --info-color: #2980b9;
     
     /* Component Specific Colors */
-    --header-bg: rgba(26, 35, 55, 0.95);
-    --footer-bg: #151e2e;
+    --header-bg: rgba(44, 62, 80, 0.95);
+    --footer-bg: #1b263b;
     --card-bg: #ffffff;
     --section-bg: #f5f6fa;
     
     /* Dark Theme Colors */
-    --dark-bg: #1a2337;
-    --dark-bg-rgb: 26, 35, 55;  /* RGB values for dark-bg */
-    --dark-card-bg: #2a3b5a;
-    --dark-tab-bg: #1f2937;
-    --dark-accent: #2a3b5a;
-    --dark-section-alt: #1f2937;
-    --dark-feature-icon-bg: rgba(49, 130, 206, 0.1);
+    --dark-bg: #2c3e50;
+    --dark-bg-rgb: 44, 62, 80;  /* RGB values for dark-bg */
+    --dark-card-bg: #34495e;
+    --dark-tab-bg: #2c3e50;
+    --dark-accent: #34495e;
+    --dark-section-alt: #2c3e50;
+    --dark-feature-icon-bg: rgba(214, 69, 65, 0.1);
     --dark-card-border: rgba(255, 255, 255, 0.1);
     
     /* Border Colors */
@@ -89,4 +89,4 @@
     /* Container Width */
     --container-width: 1200px;
     --container-padding: 1rem;
-} 
+}

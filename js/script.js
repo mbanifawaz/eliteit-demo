@@ -31,11 +31,30 @@ document.addEventListener('DOMContentLoaded', function() {
         const mobileMenuToggle = document.querySelector('.hamburger');
         const navLinks = document.querySelector('.nav-links');
         const bodyElement = document.body;
+        const hasSubmenuItems = document.querySelectorAll('.has-submenu > a');
+        
+        // Set submenu as active by default on mobile
+        if (window.innerWidth <= 767) {
+            document.querySelectorAll('.has-submenu').forEach(item => {
+                item.classList.add('active');
+            });
+        }
         
         if (mobileMenuToggle) {
             // Remove any existing event listeners
             const newMobileMenuToggle = mobileMenuToggle.cloneNode(true);
             mobileMenuToggle.parentNode.replaceChild(newMobileMenuToggle, mobileMenuToggle);
+            
+            // Handle submenu toggles in mobile view
+            hasSubmenuItems.forEach(item => {
+                item.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 767) {
+                        e.preventDefault();
+                        const parent = this.parentElement;
+                        parent.classList.toggle('active');
+                    }
+                });
+            });
             
             newMobileMenuToggle.addEventListener('click', function() {
                 this.classList.toggle('active');

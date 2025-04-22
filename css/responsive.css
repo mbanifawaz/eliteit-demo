@@ -97,6 +97,7 @@
 
     .about-text {
         order: 2;
+        max-width: unset;
     }
 
     /* Services Section */
