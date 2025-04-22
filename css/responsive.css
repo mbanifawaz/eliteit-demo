@@ -114,6 +114,11 @@
         display: none;
     }
     
+    /* Use shorter tab text on tablets too */
+    .tab-short {
+        display: none;
+    }
+    
     .services .section-header h2 {
         font-size: 2rem;
     }
@@ -157,6 +162,11 @@
 
     .logo h1 {
         font-size: 20px;
+    }
+
+    /* Tab buttons in mobile view */
+    .tab-short {
+        display: none;
     }
 
     .nav-links {
@@ -236,9 +246,10 @@
     }
 
     .tab-btn {
-        padding: 10px 15px;
-        font-size: 14px;
-        white-space: nowrap;
+        padding: 8px 12px;
+        font-size: 13px;
+        text-align: center;
+        min-width: auto;
     }
 
     .tab-pane {
@@ -323,6 +334,10 @@
     }
     
     /* Services Section */
+    .tab-short {
+        display: none;
+    }
+    
     .services .section-header h2 {
         font-size: 1.6rem;
     }

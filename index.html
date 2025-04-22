@@ -183,11 +183,11 @@
             <div class="services-container">
                 <div class="service-tab">
                     <div class="tab-buttons" data-sr-origin="left">
-                        <button class="tab-btn active" data-service="erp">ERP Implementation</button>
-                        <button class="tab-btn" data-service="web">Website Development</button>
-                        <button class="tab-btn" data-service="mobile">Mobile App Development</button>
-                        <button class="tab-btn" data-service="custom">Custom Systems</button>
-                        <button class="tab-btn" data-service="consulting">IT Consulting</button>
+                        <button class="tab-btn active" data-service="erp">ERP <span class="tab-short">Implementation</span></button>
+                        <button class="tab-btn" data-service="web">Web<span class="tab-short">site Development</span></button>
+                        <button class="tab-btn" data-service="mobile">Mobile <span class="tab-short">App Development</span></button>
+                        <button class="tab-btn" data-service="custom">Custom <span class="tab-short">Systems</span></button>
+                        <button class="tab-btn" data-service="consulting">IT <span class="tab-short">Consulting</span></button>
                     </div>
                     <div class="tab-content">
                         <div class="tab-pane active" id="erp">
@@ -367,8 +367,12 @@
                 origin: 'bottom',
                 scale: 1,
                 reset: false,
-                cleanup: true  // Stop observing after animation
+                cleanup: true,  // Stop observing after animation
+                mobile: true    // Enable on mobile devices
             });
+            
+            // Check if we're on mobile
+            const isMobile = window.innerWidth < 768;
             
             // Apply reveal to elements with data-sr attributes
             sr.reveal('[data-sr-origin]');
@@ -388,17 +392,82 @@
                 origin: 'bottom'
             });
             
-            sr.sequence({
-                selector: '#services .tab-btn',
-                interval: 100,
-                origin: 'left'
-            });
+            // Make sure tab buttons reveal properly on mobile
+            if (isMobile) {
+                // Specifically target the ERP tab which is active by default
+                sr.reveal('#services .tab-btn.active', {
+                    distance: '30px',
+                    origin: 'left',
+                    delay: 100,
+                    mobile: true,
+                    duration: 800
+                });
+                
+                // Handle all other tabs
+                sr.reveal('#services .tab-btn:not(.active)', {
+                    distance: '30px',
+                    origin: 'left',
+                    interval: 100,
+                    mobile: true,
+                    duration: 800
+                });
+                
+                // Handle tab pane content for ERP (which is active by default)
+                sr.reveal('#erp .service-img', {
+                    distance: '40px',
+                    origin: 'left',
+                    delay: 200,
+                    mobile: true
+                });
+                
+                sr.reveal('#erp .service-info', {
+                    distance: '40px',
+                    origin: 'right',
+                    delay: 300,
+                    mobile: true
+                });
+            } else {
+                // Desktop sequence animation
+                sr.sequence({
+                    selector: '#services .tab-btn',
+                    interval: 100,
+                    origin: 'left'
+                });
+            }
             
             sr.sequence({
                 selector: '#contact .info-item',
                 interval: 150,
                 origin: 'left'
             });
+            
+            // Special handling for mobile service section visibility
+            if (isMobile) {
+                // Create an intersection observer for the services section
+                const servicesSection = document.querySelector('#services');
+                
+                if (servicesSection) {
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                // Force reveal active tab content when scrolled into view on mobile
+                                const activeTab = document.querySelector('#services .tab-pane.active');
+                                if (activeTab) {
+                                    const serviceImg = activeTab.querySelector('.service-img');
+                                    const serviceInfo = activeTab.querySelector('.service-info');
+                                    
+                                    if (serviceImg) serviceImg.classList.add('mobile-reveal');
+                                    if (serviceInfo) serviceInfo.classList.add('mobile-reveal');
+                                }
+                                
+                                observer.unobserve(entry.target);
+                            }
+                        });
+                    });
+                    
+                    observer.observe(servicesSection);
+                }
+            }
         });
     </script>
 </body>

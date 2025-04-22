@@ -158,6 +158,9 @@ document.addEventListener('DOMContentLoaded', function() {
         const activePane = document.getElementById(serviceId);
         activePane.classList.add('active');
         
+        // Check if we're on mobile for mobile-specific animation
+        const isMobile = window.innerWidth < 768;
+        
         // Animate content inside the active tab
         setTimeout(() => {
             const img = activePane.querySelector('.service-img');
@@ -165,9 +168,19 @@ document.addEventListener('DOMContentLoaded', function() {
             
             if (img) {
                 img.classList.add('visible', 'is-revealed');
+                
+                // Add additional animation class for mobile
+                if (isMobile) {
+                    img.classList.add('mobile-reveal');
+                }
             }
             if (info) {
                 info.classList.add('visible', 'is-revealed');
+                
+                // Add additional animation class for mobile
+                if (isMobile) {
+                    info.classList.add('mobile-reveal');
+                }
             }
         }, 50);
     }
@@ -175,11 +188,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // Start tab carousel
     function startTabCarousel() {
         if (tabCarouselInterval) clearInterval(tabCarouselInterval);
-        
-        tabCarouselInterval = setInterval(() => {
-            currentTabIndex = (currentTabIndex + 1) % tabButtons.length;
-            switchToTab(currentTabIndex);
-        }, 5000); // Change tab every 5 seconds
+        setTimeout(() => {
+            tabCarouselInterval = setInterval(() => {
+                currentTabIndex = (currentTabIndex + 1) % tabButtons.length;
+                switchToTab(currentTabIndex);
+            }, 3000); // Change tab every 5 seconds
+        }, 3000); 
     }
     
     // Stop tab carousel

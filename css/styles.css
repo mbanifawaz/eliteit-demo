@@ -668,6 +668,11 @@ header .container {
     overflow: hidden;
 }
 
+/* Show tab-short content by default */
+.tab-short {
+    display: inline;
+}
+
 .tab-btn::before {
     content: '';
     position: absolute;
