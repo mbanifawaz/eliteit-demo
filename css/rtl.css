@@ -1,0 +1,171 @@
+/* RTL Support for Arabic Language */
+:root[dir="rtl"] {
+    direction: rtl;
+    text-align: right;
+}
+
+/* Header & Navigation */
+:root[dir="rtl"] header .logo {
+    margin-right: 0;
+    margin-left: 2rem;
+}
+
+:root[dir="rtl"] .nav-links li {
+    margin-right: 0;
+    margin-left: 1.5rem;
+}
+
+:root[dir="rtl"] .nav-links li:last-child {
+    margin-left: 0;
+}
+
+:root[dir="rtl"] .has-submenu .submenu {
+    left: auto;
+    right: 0;
+}
+
+:root[dir="rtl"] .theme-toggle {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+:root[dir="rtl"] .theme-dropdown-content {
+    right: 0;
+    left: auto;
+}
+
+/* Hero Section */
+:root[dir="rtl"] .hero-content,
+:root[dir="rtl"] .about-text {
+    padding-right: 0;
+    padding-left: 2rem;
+}
+
+/* Feature Grid */
+/* :root[dir="rtl"] .feature-icon {
+    margin-right: 0;
+    margin-left: 1rem;
+} */
+
+/* About Section */
+:root[dir="rtl"] .about-image {
+    order: 2;
+}
+
+:root[dir="rtl"] .about-text {
+    order: 1;
+}
+
+:root[dir="rtl"] .mission h3 i,
+:root[dir="rtl"] .vision h3 i {
+    margin-right: 0;
+    margin-left: 0.5rem;
+}
+
+/* Services Tab */
+:root[dir="rtl"] .tab-buttons {
+    border-right: none;
+    border-left: 1px solid var(--border-color);
+}
+
+:root[dir="rtl"] .tab-btn {
+    text-align: right;
+}
+
+:root[dir="rtl"] .tab-btn::after {
+    right: auto;
+    left: 1rem;
+}
+
+:root[dir="rtl"] .service-info ul li i {
+    margin-right: 0;
+    margin-left: 0.5rem;
+}
+
+/* Contact Section */
+:root[dir="rtl"] .info-item i {
+    margin-right: 0;
+    margin-left: 1rem;
+}
+
+:root[dir="rtl"] .social-links a {
+    margin-right: 0;
+    margin-left: 1rem;
+}
+
+/* Footer */
+:root[dir="rtl"] .footer-logo {
+    margin-right: 0;
+    margin-left: 2rem;
+}
+
+/* RTL icon flipping */
+:root[dir="rtl"] .rtl-flip {
+    transform: scaleX(-1);
+    margin-right: 0;
+    margin-left: 0.5rem;
+}
+
+:root[dir="rtl"] a .rtl-flip {
+    float: right;
+    margin-left: 0.5rem;
+}
+
+/* Form Elements */
+:root[dir="rtl"] input, 
+:root[dir="rtl"] textarea,
+:root[dir="rtl"] select {
+    text-align: right;
+}
+
+:root[dir="rtl"] .form-group button {
+    float: left;
+}
+
+/* Back to Top Button */
+:root[dir="rtl"] .back-to-top {
+    right: auto;
+    left: 2rem;
+}
+
+/* Mobile Menu */
+@media (max-width: 768px) {
+    :root[dir="rtl"] .mobile-menu {
+        margin-left: 0;
+        margin-right: auto;
+    }
+    
+    :root[dir="rtl"] .nav-active {
+        right: auto;
+        left: 0;
+        transform: translateX(-100%);
+    }
+    
+    :root[dir="rtl"] .has-submenu .submenu {
+        padding-left: 0;
+        padding-right: 1rem;
+    }
+}
+
+/* Service Pages */
+:root[dir="rtl"] .service-card {
+    text-align: right;
+}
+
+:root[dir="rtl"] .service-card-icon {
+    margin-right: 0;
+    margin-left: 1rem;
+}
+
+/* Fix Font Awesome icons for RTL */
+:root[dir="rtl"] .fa-arrow-right:before {
+    content: "\\f060"; /* Font Awesome arrow-left */
+}
+
+:root[dir="rtl"] .fa-long-arrow-right:before {
+    content: "\\f177"; /* Font Awesome long-arrow-left */
+}
+
+:root[dir="rtl"] .fa-angle-right:before {
+    content: "\\f104"; /* Font Awesome angle-left */
+} 

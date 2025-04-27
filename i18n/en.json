@@ -1,0 +1,488 @@
+{
+  "meta": {
+    "title": "Elite IT Solutions",
+    "dir": "ltr",
+    "lang": "en"
+  },
+  "header": {
+    "logo": "Elite<span>IT</span>",
+    "nav": {
+      "home": "Home",
+      "about": "About",
+      "services": "Services",
+      "contact": "Contact"
+    },
+    "theme": "Theme"
+  },
+  "hero": {
+    "title": "Empowering Business Through Smart Technology",
+    "description": "Elite IT Solutions delivers innovative ERP, software, and digital services tailored to your business goals.",
+    "cta": "Get Free Consultation"
+  },
+  "whyUs": {
+    "title": "Why Choose Us",
+    "features": [
+      {
+        "title": "Tailored Solutions",
+        "description": "IT solutions designed for businesses of all sizes"
+      },
+      {
+        "title": "ERP Expertise",
+        "description": "Deep understanding of operational efficiency"
+      },
+      {
+        "title": "End-to-End Service",
+        "description": "Complete development, implementation, and support"
+      },
+      {
+        "title": "Future-Ready",
+        "description": "Advanced technologies with ongoing technical assistance"
+      }
+    ]
+  },
+  "about": {
+    "title": "About Us",
+    "description": "Elite IT Solutions is a Saudi-based technology startup providing innovative and scalable IT solutions. Whether you're starting small or planning to grow, we help you modernize, digitize, and thrive.",
+    "mission": {
+      "title": "Our Mission",
+      "description": "To empower organizations with reliable, innovative, and customized IT solutions for digital transformation."
+    },
+    "vision": {
+      "title": "Our Vision",
+      "description": "To become a trusted name in the Gulf region for smart, future-ready technology solutions that help businesses prosper."
+    }
+  },
+  "services": {
+    "title": "Our Core Services",
+    "tabs": {
+      "erp": "ERP Implementation",
+      "web": "Web Development",
+      "mobile": "Mobile App Development",
+      "custom": "Custom Systems",
+      "consulting": "IT Consulting"
+    },
+    "erp": {
+      "title": "ERP Implementation & Support",
+      "bullets": [
+        "Needs analysis and system selection",
+        "Customization and integration",
+        "Data migration and training",
+        "Ongoing technical support"
+      ],
+      "cta": "Read More"
+    },
+    "web": {
+      "title": "Website & Web App Development",
+      "bullets": [
+        "Corporate websites",
+        "E-commerce platforms",
+        "Custom web applications"
+      ],
+      "cta": "Read More"
+    },
+    "mobile": {
+      "title": "Mobile App Development",
+      "bullets": [
+        "Native and cross-platform apps",
+        "Real-time data access",
+        "Seamless backend integration"
+      ],
+      "cta": "Read More"
+    },
+    "custom": {
+      "title": "Custom System Development",
+      "description": "We create systems custom-designed around your specific needs, ensuring performance, scalability, and ease of use.",
+      "cta": "Read More"
+    },
+    "consulting": {
+      "title": "IT Consulting & Support",
+      "description": "Technology evolves - we make sure you're always ready. Get ongoing IT consulting and support when you need it most.",
+      "cta": "Read More"
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Let's Build Your Solution Together",
+    "getInTouch": {
+      "title": "Stay In Touch",
+      "description": "Whether you're launching a startup or expanding your enterprise, we're ready to help you take the next step.",
+      "address": "Our headquarters in Saudi Arabia",
+      "email": "info@eliteitsolutions.com",
+      "phone": "+966-XXX-XXXX"
+    },
+    "form": {
+      "name": "Your Name",
+      "email": "Your Email",
+      "subject": "Subject",
+      "message": "Your Message",
+      "send": "Send Message",
+      "validation": "Please fill in all required fields.",
+      "successTitle": "Thank you for your message!",
+      "successMessage": "We will get back to you as soon as possible."
+    }
+  },
+  "footer": {
+    "slogan": "Empowering Business Through Smart Technology",
+    "quickLinks": {
+      "title": "Quick Links",
+      "links": [
+        "Home",
+        "About",
+        "Services",
+        "Contact"
+      ]
+    },
+    "ourServices": {
+      "title": "Our Services",
+      "services": [
+        "ERP Implementation",
+        "Web Development",
+        "Mobile App Development",
+        "Custom Systems",
+        "IT Consulting"
+      ]
+    },
+    "copyright": "© 2023 Elite IT Solutions. All rights reserved."
+  },
+  "services_pages": {
+    "web": {
+      "title": "Website & Web App Development",
+      "subtitle": "Build Your Digital Presence",
+      "description": "We design and develop modern, responsive websites and web applications that help businesses establish a strong online presence and effectively communicate with their audience.",
+      "services": [
+        {
+          "title": "Our Web Development Services:",
+          "label": "Corporate Websites:",
+          "description": "Professional, brand-consistent websites that showcase your business"
+        },
+        {
+          "label": "E-commerce Solutions:",
+          "description": "Fully-featured online stores with secure payment integration"
+        },
+        {
+          "label": "Web Applications:",
+          "description": "Custom web-based software solutions for your business needs"
+        },
+        {
+          "label": "Content Management Systems:",
+          "description": "User-friendly platforms for managing your site's content"
+        },
+        {
+          "label": "UI/UX Design:",
+          "description": "Intuitive and appealing user interfaces"
+        },
+        {
+          "label": "Maintenance & Support:",
+          "description": "Ongoing website updates and technical support"
+        }
+      ],
+      "benefits": {
+        "title": "Why Choose Our Web Development Services:",
+        "list": [
+          "Mobile-responsive design",
+          "SEO-friendly development",
+          "High loading speeds",
+          "Secure and scalable solutions",
+          "Modern technology stack",
+          "Regular updates and maintenance"
+        ]
+      },
+      "technologies": {
+        "title": "Technologies We Use:"
+      },
+      "cta": {
+        "title": "Ready to Build Your Digital Presence?",
+        "description": "Contact us today to discuss your web development project.",
+        "text": "Get Started"
+      }
+    },
+    "erp": {
+      "title": "ERP Implementation & Support",
+      "subtitle": "Transform Your Business Operations",
+      "description": "Our comprehensive ERP implementation services help organizations streamline their operations, improve efficiency, and drive growth through integrated business management solutions.",
+      "services": [
+        {
+          "title": "Our ERP Services Include:",
+          "label": "Business Process Analysis:",
+          "description": "Comprehensive assessment of current workflows and requirements"
+        },
+        {
+          "label": "System Selection:",
+          "description": "Expert guidance in choosing the right ERP solution for your needs"
+        },
+        {
+          "label": "Implementation & Configuration:",
+          "description": "Professional setup and customization of your ERP system"
+        },
+        {
+          "label": "Data Migration:",
+          "description": "Secure and accurate transfer of your business data"
+        },
+        {
+          "label": "Integration Services:",
+          "description": "Seamless connection with existing systems and applications"
+        },
+        {
+          "label": "Training & Support:",
+          "description": "Comprehensive user training and ongoing technical assistance"
+        }
+      ],
+      "benefits": {
+        "title": "Benefits of Our ERP Solutions:",
+        "list": [
+          "Improved operational efficiency",
+          "Enhanced data accuracy and visibility",
+          "Streamlined business processes",
+          "Better decision-making capabilities",
+          "Reduced operational costs",
+          "Scalable solutions for growth"
+        ]
+      },
+      "cta": {
+        "title": "Ready to Transform Your Business?",
+        "description": "Contact us today to discuss how our ERP solutions can help your organization achieve its goals."
+      }
+    },
+    "mobile": {
+      "title": "Mobile App Development",
+      "subtitle": "Build Your Mobile Presence",
+      "description": "We create innovative, user-friendly mobile applications that help businesses connect with their customers and streamline operations on the go.",
+      "services": [
+        {
+          "title": "Our Mobile Development Services:",
+          "label": "Native iOS Development:",
+          "description": "Custom iPhone and iPad applications"
+        },
+        {
+          "label": "Native Android Development:",
+          "description": "Tailored applications for Android devices"
+        },
+        {
+          "label": "Cross-Platform Development:",
+          "description": "Build once, deploy everywhere solutions"
+        },
+        {
+          "label": "UI/UX Design:",
+          "description": "Intuitive and appealing mobile interfaces"
+        },
+        {
+          "label": "Backend Integration:",
+          "description": "Secure API development and cloud services"
+        },
+        {
+          "label": "App Maintenance:",
+          "description": "Regular updates and technical support"
+        }
+      ],
+      "benefits": {
+        "title": "Benefits of Our Mobile Solutions:",
+        "list": [
+          "Enhanced customer engagement",
+          "Improved brand visibility",
+          "Increased operational efficiency",
+          "Better user experience",
+          "Cross-platform compatibility",
+          "Scalable architecture"
+        ]
+      },
+      "technologies": {
+        "title": "Technologies We Use:"
+      },
+      "process": {
+        "title": "Our Development Process:",
+        "steps": [
+          "Requirements Analysis",
+          "UI/UX Design",
+          "Development & Testing",
+          "Quality Assurance",
+          "Deployment",
+          "Maintenance & Support"
+        ]
+      },
+      "cta": {
+        "title": "Ready to Build Your Mobile App?",
+        "description": "Contact us today to discuss your mobile app development project.",
+        "text": "Get Started"
+      }
+    },
+    "custom": {
+      "title": "Custom System Development",
+      "subtitle": "Solutions Tailored for Your Business",
+      "description": "We develop custom software systems that perfectly align with your business operations, improving efficiency and driving growth through technology that works exactly as you need it to.",
+      "services": [
+        {
+          "title": "Our Custom Development Services:",
+          "label": "Business Analysis:",
+          "description": "In-depth study of your requirements and processes"
+        },
+        {
+          "label": "System Architecture:",
+          "description": "Designing scalable and maintainable solutions"
+        },
+        {
+          "label": "Custom Software:",
+          "description": "Applications tailored to your specific needs"
+        },
+        {
+          "label": "Integration Services:",
+          "description": "Seamless connection with existing systems"
+        },
+        {
+          "label": "Database Design:",
+          "description": "Efficient data storage and management"
+        },
+        {
+          "label": "Security Implementation:",
+          "description": "Robust security measures and compliance"
+        }
+      ],
+      "benefits": {
+        "title": "Benefits of Custom Systems:",
+        "list": [
+          "Perfectly aligned with your business processes",
+          "Improved operational efficiency",
+          "Competitive advantage",
+          "Scalability for future growth",
+          "Complete ownership and control",
+          "Long-term cost-effectiveness"
+        ]
+      },
+      "approach": {
+        "title": "Our Development Approach:",
+        "steps": [
+          {
+            "title": "Discovery",
+            "description": "Understanding your business needs and goals"
+          },
+          {
+            "title": "Design",
+            "description": "Creating the optimal solution architecture"
+          },
+          {
+            "title": "Development",
+            "description": "Building your custom system"
+          },
+          {
+            "title": "Testing",
+            "description": "Ensuring quality and reliability"
+          },
+          {
+            "title": "Deployment",
+            "description": "Launching your solution"
+          }
+        ]
+      },
+      "cta": {
+        "title": "Ready to Build Your Custom System?",
+        "description": "Contact us today to discuss how we can create the perfect solution for your business.",
+        "text": "Get Started"
+      }
+    },
+    "consulting": {
+      "title": "IT Consulting & Support",
+      "subtitle": "Strategic Technology Guidance",
+      "description": "Our IT consulting services help organizations make informed decisions about their technology investments and provide ongoing support to ensure optimal performance and security.",
+      "services": [
+        {
+          "title": "Our Consulting Services:",
+          "label": "IT Strategy Development:",
+          "description": "Long-term technology planning aligned with business goals"
+        },
+        {
+          "label": "Infrastructure Assessment:",
+          "description": "Evaluating and optimizing IT systems"
+        },
+        {
+          "label": "Security Consulting:",
+          "description": "Cybersecurity assessment and implementation"
+        },
+        {
+          "label": "Cloud Strategy:",
+          "description": "Cloud migration and optimization services"
+        },
+        {
+          "label": "Digital Transformation:",
+          "description": "Guidance on adopting new technologies"
+        },
+        {
+          "label": "24/7 IT Support:",
+          "description": "Ongoing technical assistance and maintenance"
+        }
+      ],
+      "benefits": {
+        "title": "Benefits of Our Consulting Services:",
+        "list": [
+          "Reduced operational costs",
+          "Improved system reliability",
+          "Enhanced security posture",
+          "Better resource utilization",
+          "Faster problem resolution",
+          "Strategic technology planning"
+        ]
+      },
+      "process": {
+        "title": "Our Consulting Process:",
+        "steps": [
+          {
+            "title": "Assessment",
+            "description": "Evaluating current IT infrastructure and needs"
+          },
+          {
+            "title": "Strategy",
+            "description": "Developing a comprehensive IT roadmap"
+          },
+          {
+            "title": "Implementation",
+            "description": "Executing recommended solutions"
+          },
+          {
+            "title": "Support",
+            "description": "Providing ongoing maintenance and assistance"
+          }
+        ]
+      },
+      "expertise": {
+        "title": "Areas of Expertise:",
+        "areas": [
+          "Network Infrastructure",
+          "Cloud Computing",
+          "Cybersecurity",
+          "Data Management",
+          "IT Infrastructure",
+          "Business Operations"
+        ]
+      },
+      "cta": {
+        "title": "Ready to Transform Your IT Strategy?",
+        "description": "Contact us today to discuss how our IT consulting services can help your organization thrive.",
+        "text": "Get Started"
+      }
+    }
+  },
+  "tech": {
+    "html5": "HTML5",
+    "css3": "CSS3",
+    "javascript": "JavaScript",
+    "react": "React",
+    "nodejs": "Node.js",
+    "php": "PHP",
+    "swift": "Swift",
+    "kotlin": "Kotlin",
+    "reactNative": "React Native",
+    "flutter": "Flutter",
+    "nativeAPIs": "Native APIs",
+    "cloudServices": "Cloud Services"
+  },
+  "language": {
+    "ar": "العربية",
+    "en": "English",
+    "switcher": "Language"
+  },
+  "theme": {
+    "options": {
+      "default": "Default",
+      "red": "Red",
+      "saudi": "Saudi"
+    }
+  }
+} 

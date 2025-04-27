@@ -259,7 +259,11 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Simple validation
             if (!name || !email || !message) {
-                alert('Please fill out all required fields.');
+                // Use i18n if available, or fallback to English
+                const validationMessage = window.i18n ? 
+                    window.i18n.t('contact.form.validation') : 
+                    'Please fill out all required fields.';
+                alert(validationMessage);
                 return;
             }
             
@@ -269,10 +273,19 @@ document.addEventListener('DOMContentLoaded', function() {
             // Create a success message
             const successMessage = document.createElement('div');
             successMessage.className = 'form-success';
-            successMessage.innerHTML = `
-                <h3>Thank you for your message!</h3>
-                <p>We'll get back to you as soon as possible.</p>
-            `;
+            
+            // Use i18n if available
+            if (window.i18n) {
+                successMessage.innerHTML = `
+                    <h3>${window.i18n.t('contact.form.successTitle')}</h3>
+                    <p>${window.i18n.t('contact.form.successMessage')}</p>
+                `;
+            } else {
+                successMessage.innerHTML = `
+                    <h3>Thank you for your message!</h3>
+                    <p>We'll get back to you as soon as possible.</p>
+                `;
+            }
             
             // Clear form
             contactForm.reset();
@@ -360,9 +373,9 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Get available themes
         const themes = [
-            { file: 'variables.css', name: 'Default' },
-            { file: 'red_variables.css', name: 'Red' },
-            { file: 'saudi_variables.css', name: 'Saudi' }
+            { file: 'variables.css', name: 'Default', key: 'default' },
+            { file: 'red_variables.css', name: 'Red', key: 'red' },
+            { file: 'saudi_variables.css', name: 'Saudi', key: 'saudi' }
         ];
         
         // Create theme options
@@ -371,7 +384,7 @@ document.addEventListener('DOMContentLoaded', function() {
             option.className = 'theme-option';
             option.innerHTML = `
                 <i class="fas fa-check"></i>
-                <span>${theme.name}</span>
+                <span data-i18n="theme.options.${theme.key}">${theme.name}</span>
             `;
             option.setAttribute('data-theme', theme.file);
             dropdownContent.appendChild(option);
