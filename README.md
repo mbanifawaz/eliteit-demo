@@ -1,6 +1,6 @@
-# Elite IT Solutions - Modern Website
+# Raqmiyah Solutions - Modern Website
 
-A modern, responsive, and visually stunning static website for Elite for IT Solutions, a Saudi-based technology startup providing innovative IT solutions.
+A modern, responsive, and visually stunning static website for Raqmiyah, a Saudi-based technology startup providing innovative IT solutions.
 
 ## Features
 

@@ -1,5 +1,5 @@
 /**
- * Internationalization handler for Elite IT website
+ * Internationalization handler for Raqmiyah website
  */
 
 class I18n {
@@ -38,7 +38,8 @@ class I18n {
      */
     async loadTranslations(lang) {
         try {
-            const response = await fetch(`i18n/${lang}.json`);
+            let prefix = window.location.href.includes("services") ? "../" : "";
+            const response = await fetch(`${prefix}i18n/${lang}.json`);
             if (!response.ok) {
                 throw new Error(`Failed to load translations for ${lang}`);
             }

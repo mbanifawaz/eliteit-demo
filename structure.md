@@ -1,5 +1,5 @@
 **PAGE 1**  
-Elite for IT Solutions  
+Raqmiyah  
 
 Professional Website Content Brief  
 
@@ -9,7 +9,7 @@ Professional Website Content Brief
 Homepage - Hero Section  
 
 - Empowering Businesses Through Smart Technology  
-- Elite for IT Solutions delivers innovative ERP, software, and digital services tailored to your business goals.  
+- Raqmiyah delivers innovative ERP, software, and digital services tailored to your business goals.  
 - [Request a Free Consultation]  
 
 ---
@@ -38,7 +38,7 @@ Our Core Services
 **PAGE 5**  
 About Us  
 
-- Elite for IT Solutions is a Saudi-based technology startup providing innovative and scalable IT solutions.  
+- Raqmiyah is a Saudi-based technology startup providing innovative and scalable IT solutions.  
 - Whether you're starting small or planning for growth, we help you modernize, digitize, and thrive.  
 
 ---
@@ -102,6 +102,6 @@ Contact Us
 - Let's Build Your Solution Together  
 - Whether you're launching a startup or scaling your enterprise, we're ready to help you take the next step.  
 - Based in Saudi Arabia  
-- Email: info@eliteitsolutions.com  
+- Email: info@Raqmiyahsolutions.com  
 - Phone: +966-XXX-XXXX  
 - [Request a Free Quote] [Book a Meeting]  
