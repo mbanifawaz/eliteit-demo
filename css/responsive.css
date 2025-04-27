@@ -307,6 +307,43 @@
         left: 50%;
         transform: translateX(-50%);
     }
+
+    /* Responsive Floating Contact Buttons */
+    .floating-contact-buttons {
+        bottom: 20px;
+        right: 70px; /* Position beside mobile back-to-top */
+        gap: 10px;
+        flex-direction: row; /* Ensure horizontal layout is maintained */
+    }
+
+    /* No need to adjust position with back-to-top button since they're side by side */
+    .back-to-top.visible ~ .floating-contact-buttons {
+        bottom: 20px; /* Same level as back-to-top on mobile */
+    }
+
+    :root[dir="rtl"] .floating-contact-buttons {
+        right: auto;
+        left: 70px; /* Position beside mobile back-to-top in RTL */
+        flex-direction: row-reverse; /* Change direction for RTL layout */
+    }
+
+    .floating-button {
+        width: 40px; /* Match mobile back-to-top size */
+        height: 40px; /* Match mobile back-to-top size */
+    }
+
+    .floating-button i {
+        font-size: 16px; /* Match mobile back-to-top icon size */
+    }
+
+    /* Contact label mobile styles */
+    :root[dir="rtl"] .contact-label {
+        position: absolute;
+        bottom: 50px;
+        left: 20px;
+        font-size: 12px;
+        margin-right: 0;
+    }
 }
 
 /* Small Mobile Screens (Up to 575px) */
@@ -379,6 +416,15 @@
 
     .back-to-top i {
         font-size: 16px;
+    }
+    
+    /* Ensure floating buttons have the right position on very small screens */
+    .floating-contact-buttons {
+        right: 65px; /* Slightly adjusted for very small screens */
+    }
+    
+    :root[dir="rtl"] .floating-contact-buttons {
+        left: 65px; /* Slightly adjusted for very small screens */
     }
 }
 

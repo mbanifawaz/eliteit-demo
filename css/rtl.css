@@ -168,4 +168,16 @@
 
 :root[dir="rtl"] .fa-angle-right:before {
     content: "\\f104"; /* Font Awesome angle-left */
+}
+
+/* Floating Contact Buttons RTL */
+:root[dir="rtl"] .floating-contact-buttons {
+    right: auto;
+    left: 95px; /* Position beside back-to-top button in RTL */
+    flex-direction: row-reverse; /* Reverse direction for RTL layout */
+}
+
+/* No need to adjust position with back-to-top button since they're side by side */
+:root[dir="rtl"] .back-to-top.visible ~ .floating-contact-buttons {
+    bottom: 30px; /* Same level as back-to-top */
 } 

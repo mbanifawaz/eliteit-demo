@@ -1647,4 +1647,79 @@ footer {
     header .container {
         padding: var(--spacing-sm) var(--container-padding);
     }
+}
+
+/* Floating Contact Buttons */
+.floating-contact-buttons {
+    position: fixed;
+    bottom: 30px;
+    right: 95px;
+    z-index: 99;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    transition: all 0.3s ease;
+}
+
+.back-to-top.visible ~ .floating-contact-buttons {
+    bottom: 30px;
+}
+
+.floating-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    animation: pulse 2s infinite;
+}
+
+.floating-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.floating-button i {
+    font-size: 22px;
+    color: white;
+}
+
+.whatsapp-button {
+    background-color: #25D366;
+}
+
+.call-button {
+    background-color: var(--primary-color);
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Contact label for RTL support */
+.contact-label {
+    display: none; /* Hide by default on desktop */
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Show label only in RTL mode */
+:root[dir="rtl"] .contact-label {
+    display: block;
+    margin-right: 10px;
 } 
