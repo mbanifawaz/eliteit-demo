@@ -306,6 +306,9 @@
                             <input type="email" id="email" name="email" placeholder="Your Email" data-i18n="contact.form.email" required>
                         </div>
                         <div class="form-group">
+                            <input type="tel" id="mobile" name="mobile" placeholder="Your Mobile Number" data-i18n="contact.form.mobile" required>
+                        </div>
+                        <div class="form-group">
                             <input type="text" id="subject" name="subject" placeholder="Subject" data-i18n="contact.form.subject">
                         </div>
                         <div class="form-group">
@@ -360,6 +363,12 @@
     </a>
 
     <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        (function() {
+            emailjs.init("JgwpfmPhF5CMdTpy0"); // Replace with your EmailJS public key
+        })();
+    </script>
     <script src="js/lib/scrollReveal.js"></script>
     <script src="js/i18n.js"></script>
     <script src="js/animations.js"></script>
@@ -489,4 +498,4 @@
         </a>
     </div>
 </body>
-</html> 
+</html>

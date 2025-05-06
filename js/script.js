@@ -244,22 +244,24 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Form Submission
     const contactForm = document.getElementById('contactForm');
-    
+
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
+            document.querySelector('button[type="submit"].btn.btn-primary.btn-animate').style.pointerEvents = "None"
             
-            // Get form values
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
+            const formData = new FormData(contactForm);
+            const data = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                mobile: formData.get('mobile'),
+                subject: formData.get('subject'),
+                message: formData.get('message')
+            };
             
             // Simple validation
-            if (!name || !email || !message) {
-                // Use i18n if available, or fallback to English
+            if (!data.name || !data.email || !data.mobile || !data.message) {
                 const validationMessage = window.i18n ? 
                     window.i18n.t('contact.form.validation') : 
                     'Please fill out all required fields.';
@@ -267,38 +269,48 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             
-            // In a real project, you would send this data to a server
-            // For this static site, we'll just show a success message
-            
-            // Create a success message
-            const successMessage = document.createElement('div');
-            successMessage.className = 'form-success';
-            
-            // Use i18n if available
-            if (window.i18n) {
-                successMessage.innerHTML = `
-                    <h3>${window.i18n.t('contact.form.successTitle')}</h3>
-                    <p>${window.i18n.t('contact.form.successMessage')}</p>
-                `;
-            } else {
-                successMessage.innerHTML = `
-                    <h3>Thank you for your message!</h3>
-                    <p>We'll get back to you as soon as possible.</p>
-                `;
-            }
-            
-            // Clear form
-            contactForm.reset();
-            
-            // Replace form with success message
-            contactForm.style.display = 'none';
-            contactForm.parentNode.appendChild(successMessage);
-            
-            // For demonstration only - reset form after 5 seconds
-            setTimeout(() => {
-                contactForm.style.display = 'block';
-                successMessage.remove();
-            }, 5000);
+            // Send email using EmailJS
+            emailjs.send('service_w8ondbc', 'template_3gfy6dj', data)
+                .then(() => {
+                    // Create success message
+                    const successMessage = document.createElement('div');
+                    successMessage.className = 'form-success';
+                    
+                    // Use i18n if available
+                    if (window.i18n) {
+                        successMessage.innerHTML = `
+                            <h3>${window.i18n.t('contact.form.successTitle')}</h3>
+                            <p>${window.i18n.t('contact.form.successMessage')}</p>
+                        `;
+                    } else {
+                        successMessage.innerHTML = `
+                            <h3>Thank you for your message!</h3>
+                            <p>We'll get back to you as soon as possible.</p>
+                        `;
+                    }
+                    
+                    // Clear form
+                    contactForm.reset();
+                    
+                    // Replace form with success message
+                    contactForm.style.display = 'none';
+                    contactForm.parentNode.appendChild(successMessage);
+                    
+                    // Reset form after 5 seconds
+                    setTimeout(() => {
+                        contactForm.style.display = 'block';
+                        successMessage.remove();
+                        document.querySelector('button[type="submit"].btn.btn-primary.btn-animate').style.pointerEvents = "unset"
+                    }, 5000);
+                })
+                .catch((error) => {
+                    document.querySelector('button[type="submit"].btn.btn-primary.btn-animate').style.pointerEvents = "unset"
+                    const errorMessage = window.i18n ? 
+                        window.i18n.t('contact.form.error') : 
+                        'An error occurred while sending your message. Please try again.';
+                    alert(errorMessage);
+                    console.error('EmailJS error:', error);
+                });
         });
     }
     

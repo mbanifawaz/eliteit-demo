@@ -118,7 +118,8 @@
       "send": "Send Message",
       "validation": "Please fill in all required fields.",
       "successTitle": "Thank you for your message!",
-      "successMessage": "We will get back to you as soon as possible."
+      "successMessage": "We will get back to you as soon as possible.",
+      "error": "An error occurred while sending your message. Please try again."
     }
   },
   "footer": {
