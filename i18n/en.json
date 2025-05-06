@@ -113,6 +113,7 @@
     "form": {
       "name": "Your Name",
       "email": "Your Email",
+      "mobile": "Your Mobile Number",
       "subject": "Subject",
       "message": "Your Message",
       "send": "Send Message",
