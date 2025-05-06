@@ -151,6 +151,61 @@
 
 /* Mobile Screens (576px to 767px) */
 @media (max-width: 767px) {
+
+
+    button[data-service="erp"] {
+        font-size: 0;
+    }
+    button[data-service="web"] {
+        font-size: 0;
+    }
+    button[data-service="mobile"] {
+        font-size: 0;
+    }
+    button[data-service="custom"] {
+        font-size: 0;
+    }
+    button[data-service="consulting"] {
+        font-size: 0;
+    }
+    button[data-service="erp"]::after {
+        content: "ERP";
+        font-size: 12px;
+    }
+    button[data-service="web"]::after {
+        content: "Web";
+        font-size: 12px;
+    }
+    button[data-service="mobile"]::after {
+        content: "Mobile";
+        font-size: 12px;
+    }
+    button[data-service="custom"]::after {
+        content: "Custom";
+        font-size: 12px;
+    }
+    button[data-service="consulting"]::after {
+        content: "Consulting";
+        font-size: 12px;
+    }
+    html[dir="rtl"] button[data-service="web"]::after {
+        content: "ويب"; /* Arabic translation for "ERP" */
+        font-size: 12px;
+    }
+    html[dir="rtl"] button[data-service="mobile"]::after {
+        content: "موبايل"; /* Arabic translation for "ERP" */
+        font-size: 12px;
+    }
+    html[dir="rtl"] button[data-service="custom"]::after {
+        content: "مخصص"; /* Arabic translation for "ERP" */
+        font-size: 12px;
+    }
+    html[dir="rtl"] button[data-service="consulting"]::after {
+        content: "استشارات"; /* Arabic translation for "ERP" */
+        font-size: 12px;
+    }
+
+
     .container {
         max-width: 540px;
     }
