@@ -246,6 +246,7 @@ header .right-buttons {
 
 /* Theme Toggle Styles */
 .theme-toggle {
+    display: none !important; /* REMOVE THIS IF YOU WANT THEME SWITCH TO SHOW */
     margin-left: var(--spacing-md);
     position: relative;
     display: flex;
