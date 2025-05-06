@@ -270,7 +270,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             
             // Send email using EmailJS
-            emailjs.send('service_w8ondbc', 'template_3gfy6dj', data)
+            emailjs.send('service_ahumj6i', 'template_sbl8222', data)
                 .then(() => {
                     // Create success message
                     const successMessage = document.createElement('div');
