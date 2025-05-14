@@ -180,4 +180,21 @@
 /* No need to adjust position with back-to-top button since they're side by side */
 :root[dir="rtl"] .back-to-top.visible ~ .floating-contact-buttons {
     bottom: 30px; /* Same level as back-to-top */
-} 
+}
+
+/* RTL Support for Arabic Language */
+:root[dir="rtl"] {
+    direction: rtl;
+    text-align: right;
+}
+
+/* Header & Navigation */
+:root[dir="rtl"] .logo {
+    margin-right: 0;
+    margin-left: var(--spacing-md);
+}
+
+:root[dir="rtl"] .logo img {
+    margin-right: 0;
+    margin-left: var(--spacing-sm);
+}

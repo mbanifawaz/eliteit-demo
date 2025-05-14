@@ -147,6 +147,10 @@
         grid-column: span 2;
         margin-bottom: var(--spacing-lg);
     }
+
+    .logo img {
+        height: 45px;
+    }
 }
 
 /* Mobile Screens (576px to 767px) */
@@ -399,6 +403,10 @@
         font-size: 12px;
         margin-right: 0;
     }
+
+    .logo img {
+        height: 40px;
+    }
 }
 
 /* Small Mobile Screens (Up to 575px) */
@@ -481,6 +489,10 @@
     :root[dir="rtl"] .floating-contact-buttons {
         left: 65px; /* Slightly adjusted for very small screens */
     }
+
+    .logo img {
+        height: 35px;
+    }
 }
 
 /* For the hamburger menu overlay */
@@ -524,4 +536,4 @@
     }
 }
 
-/* Dark Mode Support is now applied by default */ 
+/* Dark Mode Support is now applied by default */
