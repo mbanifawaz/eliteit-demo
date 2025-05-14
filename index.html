@@ -306,7 +306,7 @@
                     </div>
                 </div>
                 <div class="contact-form" data-sr-origin="right" data-sr-distance="80px">
-                    <form id="contactForm">
+                    <form id="contactForm" action="process.php" method="POST">
                         <div class="form-group">
                             <input type="text" id="name" name="name" placeholder="Your Name" data-i18n="contact.form.name" required>
                         </div>
@@ -371,12 +371,6 @@
     </a>
 
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script>
-        (function() {
-            emailjs.init("QSi6cpC0Vn7DqOl9U"); // Replace with your EmailJS public key
-        })();
-    </script>
     <script src="js/lib/scrollReveal.js"></script>
     <script src="js/i18n.js"></script>
     <script src="js/animations.js"></script>

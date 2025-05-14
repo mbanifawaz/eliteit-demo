@@ -249,29 +249,18 @@ document.addEventListener('DOMContentLoaded', function() {
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            document.querySelector('button[type="submit"].btn.btn-primary.btn-animate').style.pointerEvents = "None"
+            const submitButton = document.querySelector('button[type="submit"].btn.btn-primary');
+            submitButton.style.pointerEvents = "none";
             
             const formData = new FormData(contactForm);
-            const data = {
-                name: formData.get('name'),
-                email: formData.get('email'),
-                mobile: formData.get('mobile'),
-                subject: formData.get('subject'),
-                message: formData.get('message')
-            };
             
-            // Simple validation
-            if (!data.name || !data.email || !data.mobile || !data.message) {
-                const validationMessage = window.i18n ? 
-                    window.i18n.t('contact.form.validation') : 
-                    'Please fill out all required fields.';
-                alert(validationMessage);
-                return;
-            }
-            
-            // Send email using EmailJS
-            emailjs.send('service_ahumj6i', 'template_sbl8222', data)
-                .then(() => {
+            fetch('process.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
                     // Create success message
                     const successMessage = document.createElement('div');
                     successMessage.className = 'form-success';
@@ -300,17 +289,18 @@ document.addEventListener('DOMContentLoaded', function() {
                     setTimeout(() => {
                         contactForm.style.display = 'block';
                         successMessage.remove();
-                        document.querySelector('button[type="submit"].btn.btn-primary.btn-animate').style.pointerEvents = "unset"
+                        submitButton.style.pointerEvents = "unset";
                     }, 5000);
-                })
-                .catch((error) => {
-                    document.querySelector('button[type="submit"].btn.btn-primary.btn-animate').style.pointerEvents = "unset"
-                    const errorMessage = window.i18n ? 
-                        window.i18n.t('contact.form.error') : 
-                        'An error occurred while sending your message. Please try again.';
-                    alert(errorMessage);
-                    console.error('EmailJS error:', error);
-                });
+                } else {
+                    submitButton.style.pointerEvents = "unset";
+                    alert(data.message || 'An error occurred while sending your message. Please try again.');
+                }
+            })
+            .catch(error => {
+                submitButton.style.pointerEvents = "unset";
+                alert('An error occurred while sending your message. Please try again.');
+                console.error('Form submission error:', error);
+            });
         });
     }
     
@@ -479,4 +469,4 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     }
-}); 
+});
